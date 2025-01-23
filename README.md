@@ -30,12 +30,15 @@ Zasada jest prosta, wszystkie pliki nazywamy za pomoca snake_case'a. Czyli playe
 
 ### Nomenklatura obiektow na scenie:
 
-Przy obiektach uzywamy CamelCase oraz powinnismy sie starac nazywac dany obiekt z jego przeznaczeniem, zeby pozniej nie bylo problemow. Np.
+Przy obiektach uzywamy CamelCase oraz powinnismy sie starac nazywac dany obiekt z jego przeznaczeniem, zeby pozniej nie bylo problemow. 
+
+Np.
 
 PlayerLook - obiekt/galaz odpowiedzialna za wyglad gracza.
+
 ConnectButton - przycisk UI, ktory jest odpowiedzialny za inicjalizacje laczenia sie z serwerem.
 
-Obiekty, tzw. Node'y posiadaja rowniez ikonografie, ale czasami czlowiek nie bedzie potrafil ogarnac co one znacza.
+Obiekty, tzw. Node'y posiadaja rowniez ikonografie. Czasami one sa nie czytelne, radze uwazac.
 
 ### Struktura katalogow
 
