@@ -3,13 +3,16 @@
 Godot 4.4-beta-1 w standardowej wersji, bez mono.
 
 [- Windows](https://github.com/godotengine/godot-builds/releases/download/4.4-beta1/Godot_v4.4-beta1_win64.exe.zip)
+
 [- Linux](https://github.com/godotengine/godot-builds/releases/download/4.4-beta1/Godot_v4.4-beta1_linux.x86_64.zip)
+
 [- MacOS](https://github.com/godotengine/godot-builds/releases/download/4.4-beta1/Godot_v4.4-beta1_macos.universal.zip)
+
 [- Export Templates](https://github.com/godotengine/godot-builds/releases/download/4.4-beta1/Godot_v4.4-beta1_export_templates.tpz)
 
 ## Jak odpalic projekt?
 
-1. Pobieramy Godota z glownej strony w wersji 4.3
+1. Pobieramy Godota z linkow podanych powyzej.
 2. Wypakujemy Godota do jakiegos katalogu.
 3. Pobieramy projekt za pomoca gita.
 4. Otwieramy plik .exe z Godotem
