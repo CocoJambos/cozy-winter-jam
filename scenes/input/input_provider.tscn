@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://mm5nba41rrvw"]
+
+[ext_resource type="Script" uid="uid://dg8riees3r78l" path="res://scripts/input/input_provider.gd" id="1_1atfx"]
+
+[node name="InputProvider" type="Node"]
+script = ExtResource("1_1atfx")
+metadata/_custom_type_script = ExtResource("1_1atfx")
