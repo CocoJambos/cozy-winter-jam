@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://deeclwef3ifsb"]
 
-[ext_resource type="PackedScene" uid="uid://x8n4b3tb2fft" path="res://static_files/ground.blend" id="1_c6qwa"]
+[ext_resource type="PackedScene" uid="uid://x8n4b3tb2fft" path="res://static_files/ground.blend" id="1_eh505"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbnll"]
 albedo_color = Color(0.337145, 0.123507, 2.40654e-08, 1)
@@ -30,4 +30,4 @@ light_energy = 0.437
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3, 2)
 
-[node name="ground" parent="." instance=ExtResource("1_c6qwa")]
+[node name="ground" parent="." instance=ExtResource("1_eh505")]
