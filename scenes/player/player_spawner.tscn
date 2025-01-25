@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdyv7kwj4tlo2"]
+
+[ext_resource type="Script" uid="uid://dbpy772nasf8h" path="res://scripts/spawners/player_spawner.gd" id="1_1aqyb"]
+[ext_resource type="PackedScene" uid="uid://cfw2pfc0ug6dp" path="res://scenes/player/player_entity.tscn" id="2_2s7sm"]
+
+[node name="PlayerSpawner" type="Node3D" node_paths=PackedStringArray("spawn_point")]
+script = ExtResource("1_1aqyb")
+player_scene = ExtResource("2_2s7sm")
+spawn_point = NodePath("SpawnPoint")
+metadata/_custom_type_script = ExtResource("1_1aqyb")
+
+[node name="SpawnPoint" type="Marker3D" parent="."]

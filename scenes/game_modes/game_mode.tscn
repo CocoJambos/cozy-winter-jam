@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpgtw8sxv8xlt"]
+
+[ext_resource type="Script" uid="uid://d3hq5ceos56o2" path="res://scripts/game_modes/game_mode.gd" id="1_2a7t8"]
+[ext_resource type="PackedScene" uid="uid://mm5nba41rrvw" path="res://scenes/input/input_provider.tscn" id="2_1wpla"]
+[ext_resource type="PackedScene" uid="uid://cdyv7kwj4tlo2" path="res://scenes/player/player_spawner.tscn" id="3_e7py6"]
+
+[node name="GameMode" type="Node" node_paths=PackedStringArray("player_spawner", "input_provider")]
+script = ExtResource("1_2a7t8")
+player_spawner = NodePath("PlayerSpawner")
+input_provider = NodePath("InputProvider")
+metadata/_custom_type_script = ExtResource("1_2a7t8")
+
+[node name="InputProvider" parent="." instance=ExtResource("2_1wpla")]
+
+[node name="PlayerSpawner" parent="." instance=ExtResource("3_e7py6")]
