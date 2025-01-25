@@ -2,11 +2,9 @@ extends Node;
 class_name InputProvider;
 
 signal input_chaged(input_data: InputData);
+@onready var input_data: InputData = InputData.new();
 
-
-func _input(event: InputEvent) -> void:
-	var input_data = InputData.new();
-	
+func _input(event: InputEvent) -> void:	
 	if _is_movement_input(event):
 		var movement_vector = Input.get_vector("left", "right", "up", "down");
 		input_data.movement_input = movement_vector;
