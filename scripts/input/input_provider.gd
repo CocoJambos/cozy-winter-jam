@@ -21,9 +21,4 @@ func _input(event: InputEvent) -> void:
 	
 
 func _is_movement_input(event: InputEvent) -> bool:
-	if event is not InputEventAction:
-		return false;
-	
-	var action_event: InputEventAction = event as InputEventAction;
-	
-	return action_event.is_action("up") || action_event.is_action("down") || action_event.is_action("left") || action_event.is_action("right");
+	return event.is_action("up") || event.is_action("down") || event.is_action("left") || event.is_action("right");
