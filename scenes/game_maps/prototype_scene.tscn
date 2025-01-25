@@ -1,15 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://deeclwef3ifsb"]
+[gd_scene load_steps=4 format=3 uid="uid://deeclwef3ifsb"]
 
 [ext_resource type="PackedScene" uid="uid://x8n4b3tb2fft" path="res://static_files/ground.blend" id="1_crmsi"]
 [ext_resource type="PackedScene" uid="uid://dvh72cnh3bonb" path="res://static_files/tree.glb" id="2_wger2"]
 [ext_resource type="PackedScene" uid="uid://bjy4sijbdkc2p" path="res://static_files/branch.glb" id="3_ctfrl"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbnll"]
-albedo_color = Color(0.337145, 0.123507, 2.40654e-08, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_in8qa"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c6qwa"]
 
 [node name="Map" type="Node3D"]
 
@@ -226,20 +219,3 @@ transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107
 
 [node name="branch5" parent="Branches" instance=ExtResource("3_ctfrl")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 6.76124, 1.84262, -14.8676)
-
-[node name="Character" type="Node3D" parent="."]
-
-[node name="Bober" type="CharacterBody3D" parent="Character"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Character/Bober"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.435969, 0)
-material_override = SubResource("StandardMaterial3D_jbnll")
-mesh = SubResource("CapsuleMesh_in8qa")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Character/Bober"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.435969, 0)
-shape = SubResource("CapsuleShape3D_c6qwa")
-
-[node name="Camera3D" type="Camera3D" parent="Character"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3, 2)
