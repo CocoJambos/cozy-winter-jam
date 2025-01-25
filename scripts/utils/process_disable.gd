@@ -3,6 +3,12 @@ class_name ProcessDisable;
 
 @export var nodes_to_disable: Array[Node];
 
+func _ready() -> void:
+	GameData.register_node_disabler(self);
+
+func _exit_tree() -> void:
+	GameData.unregister_node_disabler(self);
+
 func enable() -> void:
 	for node: Node in nodes_to_disable:
 		node.set_process(true);

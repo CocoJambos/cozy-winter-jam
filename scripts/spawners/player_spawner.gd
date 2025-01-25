@@ -14,6 +14,8 @@ func spawn_player() -> PlayerSpawner:
 	if player_node == null:
 		printerr("Could not spawn player!!");
 	
+	player_node.position = spawn_point.position;
+	player_node.rotation = spawn_point.rotation;
 	# Moźna tutaj dodać jakas sekwencje spawnowania
 	get_tree().create_timer(0.5).timeout.connect(func(): player_spawned.emit(player_node));
 	return self;
