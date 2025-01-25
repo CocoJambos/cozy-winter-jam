@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://d35g4ei7c6rbg"]
+
+[node name="RigRoot" type="Node3D"]
+
+[node name="TestSprite" type="Sprite3D" parent="."]
