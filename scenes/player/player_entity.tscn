@@ -23,6 +23,7 @@ spring_length = -3.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+current = true
 
 [node name="ProcessDisable" type="Node" parent="." node_paths=PackedStringArray("nodes_to_disable")]
 script = ExtResource("3_i0wwn")
