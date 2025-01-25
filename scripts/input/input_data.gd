@@ -20,4 +20,12 @@ var action_input: bool:
 		is_dirty = true;
 		action_input = value;
 
+var mouse_input: Vector2 = Vector2.ZERO:
+	set(value):
+		is_dirty = true;
+		mouse_input = value;
+	get:
+		return mouse_input;
+
 var is_dirty: bool;
+var mouse_input_triggered: bool = false;

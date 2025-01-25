@@ -21,5 +21,7 @@ func _start_game() -> void:
 	game_map.add_child(player_entity);
 	input_provider.input_chaged.connect(_on_input_changed);
 	
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
+	
 func _on_input_changed(input_data: InputData) -> void:
 	player_entity.handle_input(input_data);

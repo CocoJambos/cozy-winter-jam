@@ -16,6 +16,11 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action("pause"):
 		input_data.pause_input = event.is_action_pressed("pause");
+	
+	if event is InputEventMouseMotion:
+		var mouse_event: InputEventMouseMotion = event as InputEventMouseMotion;
+		input_data.mouse_input = mouse_event.relative;
+		input_data.mouse_input_triggered = true;
 		
 	input_chaged.emit(input_data);
 	
