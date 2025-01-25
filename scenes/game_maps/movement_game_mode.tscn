@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://v6d2ovk5keer"]
+
+[ext_resource type="PackedScene" uid="uid://bpgtw8sxv8xlt" path="res://scenes/game_modes/game_mode.tscn" id="1_073ak"]
+[ext_resource type="PackedScene" uid="uid://deeclwef3ifsb" path="res://scenes/game_maps/prototype_scene.tscn" id="2_e7dqg"]
+
+[node name="MovementGameMode" type="Node3D"]
+
+[node name="GameMode" parent="." node_paths=PackedStringArray("game_map") instance=ExtResource("1_073ak")]
+game_map = NodePath("../Map")
+
+[node name="SpawnPoint" parent="GameMode/PlayerSpawner" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 1)
+
+[node name="Map" parent="." instance=ExtResource("2_e7dqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54232, 0, 0)
+
+[editable path="GameMode"]
+[editable path="GameMode/PlayerSpawner"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfw2pfc0ug6dp"]
+
+[ext_resource type="Script" uid="uid://dwmjbge87robn" path="res://scripts/entities/player_entity.gd" id="1_10jv8"]
+[ext_resource type="PackedScene" uid="uid://d35g4ei7c6rbg" path="res://scenes/player/rig_root.tscn" id="2_s1hou"]
+[ext_resource type="Script" uid="uid://0ar61ie5u3kl" path="res://scripts/utils/process_disable.gd" id="3_i0wwn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s1hou"]
+radius = 0.259084
+
+[node name="PlayerEntity" type="CharacterBody3D" node_paths=PackedStringArray("spring_arm", "camera")]
+script = ExtResource("1_10jv8")
+acceleration = 30.0
+max_speed = 5.0
+rotate_speed = 0.2
+spring_arm = NodePath("SpringArm3D")
+camera = NodePath("SpringArm3D/Camera3D")
+metadata/_custom_type_script = ExtResource("1_10jv8")
+
+[node name="MovementCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_s1hou")
+
+[node name="RigRoot" parent="." instance=ExtResource("2_s1hou")]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.157242, 0)
+spring_length = -3.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+current = true
+
+[node name="ProcessDisable" type="Node" parent="." node_paths=PackedStringArray("nodes_to_disable")]
+script = ExtResource("3_i0wwn")
+nodes_to_disable = [NodePath("..")]
+metadata/_custom_type_script = ExtResource("3_i0wwn")
