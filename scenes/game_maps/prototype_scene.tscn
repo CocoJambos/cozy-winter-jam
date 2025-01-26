@@ -83,7 +83,7 @@ material = SubResource("StandardMaterial3D_g03yt")
 [node name="Map" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.5, -0.75, 0.433013, 0, 0.5, 0.866025, -0.866025, 0.433013, -0.25, 0, 0, 0)
+transform = Transform3D(-0.5, -0.75, 0.433013, 0, 0.5, 0.866025, -0.866025, 0.433013, -0.25, 0.00376832, -0.0192041, -0.00410271)
 light_color = Color(0.839484, 0.835803, 0.763424, 1)
 light_energy = 0.3
 shadow_enabled = true
@@ -91,7 +91,7 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_g03yt")
 
-[node name="ground" parent="." instance=ExtResource("1_crmsi")]
+[node name="ground2" parent="." instance=ExtResource("1_crmsi")]
 
 [node name="Trees" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94921, 0, 1.70934)
@@ -447,4 +447,4 @@ texture = ExtResource("6_yb4mi")
 transform = Transform3D(0, 0, 5, 0, 2.09645, 0, -2.18976, 0, 0, -25.5148, 0.488823, 26.0686)
 texture = ExtResource("6_yb4mi")
 
-[editable path="ground"]
+[editable path="ground2"]
