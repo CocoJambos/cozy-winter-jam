@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://deeclwef3ifsb" path="res://scenes/game_maps/prototype_scene.tscn" id="2_e7dqg"]
 [ext_resource type="PackedScene" uid="uid://b74bj1cuni5k8" path="res://scenes/tree/tree.tscn" id="3_e7dqg"]
 [ext_resource type="PackedScene" uid="uid://dlw0kh4u8u5ny" path="res://scenes/dams/dam_1.tscn" id="4_nkkpq"]
-[ext_resource type="PackedScene" uid="uid://dc7okl7c4ayxx" path="res://scenes/water/water_plane.tscn" id="5_gec2c"]
+[ext_resource type="PackedScene" uid="uid://db8eu3e5w5qvv" path="res://scenes/post_process/pixel_post_process.tscn" id="5_gec2c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nvcb"]
 resource_name = "brown"
@@ -99,7 +99,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75325, -0.566032, -1.0765)
 [node name="Dam_1" parent="." instance=ExtResource("4_nkkpq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.383228, -1.15078, -0.680133)
 
-[node name="WaterPlane" parent="." instance=ExtResource("5_gec2c")]
+[node name="PixelPostProcess" parent="." instance=ExtResource("5_gec2c")]
 
 [editable path="GameMode"]
 [editable path="GameMode/PlayerSpawner"]
