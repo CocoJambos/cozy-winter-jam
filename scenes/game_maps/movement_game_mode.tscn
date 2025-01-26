@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://v6d2ovk5keer"]
+[gd_scene load_steps=10 format=3 uid="uid://v6d2ovk5keer"]
 
 [ext_resource type="PackedScene" uid="uid://bpgtw8sxv8xlt" path="res://scenes/game_modes/game_mode.tscn" id="1_073ak"]
 [ext_resource type="PackedScene" uid="uid://deeclwef3ifsb" path="res://scenes/game_maps/prototype_scene.tscn" id="2_e7dqg"]
@@ -7,11 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://dlw0kh4u8u5ny" path="res://scenes/dams/dam_1.tscn" id="4_nkkpq"]
 [ext_resource type="PackedScene" uid="uid://db8eu3e5w5qvv" path="res://scenes/post_process/pixel_post_process.tscn" id="5_gec2c"]
 [ext_resource type="PackedScene" uid="uid://dc7okl7c4ayxx" path="res://scenes/water/water_plane.tscn" id="7_jpdmf"]
+[ext_resource type="Script" uid="uid://dmbvlbhxyd73w" path="res://scripts/ui/loading_ui.gd" id="8_330ev"]
+[ext_resource type="Texture2D" uid="uid://b5m6hsaap6j2l" path="res://textures/UI/Logo.png" id="9_u11p3"]
 
 [node name="MovementGameMode" type="Node3D"]
 
-[node name="GameMode" parent="." node_paths=PackedStringArray("game_map") instance=ExtResource("1_073ak")]
+[node name="GameMode" parent="." node_paths=PackedStringArray("game_map", "loading_ui") instance=ExtResource("1_073ak")]
 game_map = NodePath("../Map")
+loading_ui = NodePath("../UI/LoadingUI")
 
 [node name="SpawnPoint" parent="GameMode/PlayerSpawner" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 1)
@@ -48,6 +51,27 @@ target_dam = NodePath("../../Dams/Dam_2")
 [node name="WaterPlane3" parent="WaterPlanes" node_paths=PackedStringArray("water_plane", "target_dam") instance=ExtResource("7_jpdmf")]
 water_plane = NodePath("../../Map/ground2/water_3")
 target_dam = NodePath("../../Dams/Dam_3")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LoadingUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_330ev")
+
+[node name="TextureRect" type="TextureRect" parent="UI/LoadingUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_u11p3")
+expand_mode = 2
 
 [editable path="GameMode"]
 [editable path="GameMode/PlayerSpawner"]
