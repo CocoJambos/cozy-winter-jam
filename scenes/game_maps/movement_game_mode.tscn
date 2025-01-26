@@ -1,7 +1,78 @@
-[gd_scene load_steps=3 format=3 uid="uid://v6d2ovk5keer"]
+[gd_scene load_steps=10 format=4 uid="uid://v6d2ovk5keer"]
 
 [ext_resource type="PackedScene" uid="uid://bpgtw8sxv8xlt" path="res://scenes/game_modes/game_mode.tscn" id="1_073ak"]
 [ext_resource type="PackedScene" uid="uid://deeclwef3ifsb" path="res://scenes/game_maps/prototype_scene.tscn" id="2_e7dqg"]
+[ext_resource type="PackedScene" uid="uid://b74bj1cuni5k8" path="res://scenes/tree/tree.tscn" id="3_e7dqg"]
+[ext_resource type="PackedScene" uid="uid://dlw0kh4u8u5ny" path="res://scenes/dams/dam_1.tscn" id="4_nkkpq"]
+[ext_resource type="PackedScene" uid="uid://dc7okl7c4ayxx" path="res://scenes/water/water_plane.tscn" id="5_gec2c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nvcb"]
+resource_name = "brown"
+cull_mode = 2
+albedo_color = Color(0.262546, 0.207417, 0.190222, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2k2dn"]
+resource_name = "wood"
+cull_mode = 2
+albedo_color = Color(0.837107, 0.620858, 0.428692, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0fno7"]
+_surfaces = [{
+"aabb": AABB(-1, 0.75271, -1, 2, 1.25, 2),
+"format": 34896613377,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIAAwAFAAEABQACAAEAAwAGAAUABAACAAcABgAEAAcABQAHAAIABgAHAAUA"),
+"name": "brown",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD//wAA//8AAP////8AAAAA//8AAAAAAAD///////8AAA==")
+}, {
+"aabb": AABB(-1, 0.50271, -1, 2, 0.25, 2),
+"format": 34359742465,
+"index_count": 30,
+"index_data": PackedByteArray("AAAFAAYAAAAEAAUAAgAAAAYABAABAAUAAQAGAAUABAADAAEAAgAGAAcAAwACAAcAAQAHAAYAAwAHAAEA"),
+"lods": [0.561457, PackedByteArray("AAABAAIAAwACAAEAAAAEAAEABAADAAEA")],
+"name": "wood",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AACAP5SxQD8AAIA/RM49vpSxAD9Ezj2+AACAv5SxQD8AAIA/AACAv5SxQD8AAIC/AACAP5SxQD8AAIC/RM49PpSxAD9Ezj2+RM49PpSxAD9Ezj0+RM49vpSxAD9Ezj0+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_spb8c"]
+resource_name = "tree_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, 0.75271, -1, 2, 1.25, 2),
+"attribute_data": PackedByteArray("/3f///+f/7//n////3f/v/93/7//n/9//5//v/93/3//d/9//5//P/+f/3//d/8//5//f//f/z//3/9//5//P/93/z//nwAA/5//P/93AAA="),
+"format": 34896613399,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEA"),
+"material": SubResource("StandardMaterial3D_7nvcb"),
+"name": "brown",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV/////wAA//8AAP///////wAA//8AAP///////////////wAA////vwAA//////+//////////78AAAAA////v1TVVNVU1VTVVNVU1VTVVNX/v/+//7//v/+//7//v/+/qiqqKqoqqiqqKqoqqiqqKv9//7//f/+//3//v/9//7//////////////////////")
+}, {
+"aabb": AABB(-1, 0.50271, -1, 2, 0.25, 2),
+"attribute_data": PackedByteArray("AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPw=="),
+"format": 34359742487,
+"index_count": 30,
+"index_data": PackedByteArray("AAAFAAYAAAAHAAUACAAJAAoACAALAAkAAwAMAAEAAwACAAwABAANAA4ABAAPAA0AEAARABIAEAATABEA"),
+"lods": [0.561457, PackedByteArray("AAABAAIAAwACAAEAAAAEAAEABAADAAEA")],
+"material": SubResource("StandardMaterial3D_2k2dn"),
+"name": "wood",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AACAP5SxQD8AAIA/RM49vpSxAD9Ezj2+AACAv5SxQD8AAIA/AACAv5SxQD8AAIC/AACAP5SxQD8AAIC/RM49PpSxAD9Ezj2+RM49PpSxAD9Ezj0+AACAP5SxQD8AAIC/AACAv5SxQD8AAIA/RM49PpSxAD9Ezj0+RM49vpSxAD9Ezj0+AACAP5SxQD8AAIA/RM49vpSxAD9Ezj0+RM49vpSxAD9Ezj2+RM49PpSxAD9Ezj2+AACAv5SxQD8AAIC/RM49vpSxAD9Ezj2+RM49PpSxAD9Ezj0+RM49PpSxAD9Ezj2+RM49vpSxAD9Ezj0+Dp4OHv///7/wYQ4e////v/BhDh7///+/8GEOHv///78OngAA////vw6eDh7///+/Dp4OHv///78Ong4e////v/9/Dh7///8//38OHv///z//fw4e////P/9/Dh7///8/8GEOHv///78OngAA////vw6eAAD///+/Dp4AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_0fno7")
 
 [node name="MovementGameMode" type="Node3D"]
 
@@ -14,5 +85,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 1)
 [node name="Map" parent="." instance=ExtResource("2_e7dqg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54232, 0, 0)
 
+[node name="tree" parent="." instance=ExtResource("3_e7dqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.84619, -0.566032, -1.0765)
+
+[node name="trunk_top" type="MeshInstance3D" parent="tree/bark_main/trunk_top" index="0"]
+transform = Transform3D(0.146859, 0, 0, 0, 1, 0, 0, 0, 0.146859, 0, 0, 0)
+mesh = SubResource("ArrayMesh_spb8c")
+skeleton = NodePath("")
+
+[node name="tree" parent="tree" instance=ExtResource("3_e7dqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75325, -0.566032, -1.0765)
+
+[node name="Dam_1" parent="." instance=ExtResource("4_nkkpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.383228, -1.15078, -0.680133)
+
+[node name="WaterPlane" parent="." instance=ExtResource("5_gec2c")]
+
 [editable path="GameMode"]
 [editable path="GameMode/PlayerSpawner"]
+[editable path="Map"]
+[editable path="Map/ground2"]
+[editable path="tree"]
+[editable path="tree/bark_main/branch4"]
+[editable path="tree/tree"]
+[editable path="tree/tree/bark_main/branch4"]
+[editable path="Dam_1"]

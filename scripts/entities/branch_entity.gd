@@ -38,6 +38,11 @@ func _on_start(_node: Node) -> void:
 		
 		node = _node;
 		set_process(true);
+		return;
+	
+	if _node is DamTrigger:
+		var dam: DamTrigger = _node;
+		dam.mark_as_good(self);
 		
 
 func _on_stop() -> void:
