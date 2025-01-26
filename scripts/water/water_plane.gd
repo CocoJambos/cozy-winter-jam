@@ -8,8 +8,8 @@ class_name WaterPlane;
 var starting_water_hight: float;
 var current_tween: Tween;
 
-func _ready() -> void:
-	starting_water_hight = water_plane.global_position.y;
+dfunc _ready() -> void:
+a	starting_water_hight = water_plane.global_position.y;
 	water_plane.global_position.y = starting_height.global_position.y;
 	target_dam.dam_progress.connect(_on_dam_progress);
 
