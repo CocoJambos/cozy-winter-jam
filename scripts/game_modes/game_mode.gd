@@ -9,6 +9,8 @@ signal game_is_finished;
 @export var loop: AudioStreamPlayer;
 @export var ambient: AudioStreamPlayer;
 @export var dams: Array[DamEntity];
+@export var details_ui: DetailsUI;
+@export var end_ui: EndUI;
 
 var player_entity: PlayerEntity;
 
@@ -31,14 +33,24 @@ func _start_game() -> void:
 	loop.play();
 	ambient.play();
 	
+	details_ui.show_ui();
+	details_ui.state_changed.connect(details_ui_state);
+	input_provider.input_chaged.connect(details_ui._on_input_changed);
+	
+	var is_closed: bool = await details_ui.state_changed;
+	
 	for dam: DamEntity in dams:
 		dam.dam_progress.connect(dam_progress);
 	
 	unpause_game();
 	await game_is_finished;
 	
+	input_provider.input_chaged.disconnect(details_ui._on_input_changed);
+	details_ui.state_changed.disconnect(details_ui_state);
+	details_ui.hide_ui();
 	#display end screen;
 	pause_game();
+	end_ui.show();
 
 func pause_game() -> void:
 	for to_disable: ProcessDisable in GameData.node_disablers.values():
@@ -55,3 +67,10 @@ func dam_progress(current: int, total: int) -> void:
 	var are_finished = dams.all(func(dam: DamEntity): dam.is_finished);
 	if are_finished:
 		game_is_finished.emit();
+		
+func details_ui_state(state: bool) -> void:
+	if state:
+		pause_game();
+		return;
+	
+	unpause_game();

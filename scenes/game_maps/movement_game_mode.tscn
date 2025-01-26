@@ -13,12 +13,14 @@
 
 [node name="MovementGameMode" type="Node3D"]
 
-[node name="GameMode" parent="." node_paths=PackedStringArray("game_map", "loading_ui", "loop", "ambient", "dams") instance=ExtResource("1_073ak")]
+[node name="GameMode" parent="." node_paths=PackedStringArray("game_map", "loading_ui", "loop", "ambient", "dams", "details_ui", "end_ui") instance=ExtResource("1_073ak")]
 game_map = NodePath("../Map")
-loading_ui = NodePath("")
+loading_ui = NodePath("../UI/LoadingUI")
 loop = NodePath("../Loop")
 ambient = NodePath("../Ambient")
 dams = [NodePath("../Dams/Dam_1"), NodePath("../Dams/Dam_2"), NodePath("../Dams/Dam_3")]
+details_ui = NodePath("../UI/DetailsUI")
+end_ui = NodePath("../UI/EndUI")
 
 [node name="SpawnPoint" parent="GameMode/PlayerSpawner" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 1)
@@ -69,3 +71,4 @@ bus = &"Ambient"
 [editable path="GameMode/PlayerSpawner"]
 [editable path="Map"]
 [editable path="Map/ground2"]
+[editable path="UI"]
