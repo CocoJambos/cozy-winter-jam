@@ -14,6 +14,7 @@ class_name PlayerEntity;
 @export var grab_mouth: Node3D;
 @export var footstep_stream: AudioStreamPlayer3D;
 @export var footsteps: Array[AudioStreamOggVorbis];
+@export var bober_anim: BoberAnim;
 
 var interaction_receiver: InteractionReceiver;
 var input_data: InputData = null;
@@ -37,6 +38,7 @@ func _physics_process(delta: float) -> void:
 	
 func footsteps_play() -> void:
 	if velocity.is_zero_approx():
+		bober_anim.stop();
 		if footstep_stream.playing:
 			footstep_stream.stop();
 		return;
@@ -44,6 +46,7 @@ func footsteps_play() -> void:
 	if footstep_stream.playing:
 		return;
 	
+	bober_anim.play();
 	var rand: int = randi() % footsteps.size() - 1;
 	var audio: AudioStreamOggVorbis = footsteps[rand];
 	footstep_stream.stream = audio;
