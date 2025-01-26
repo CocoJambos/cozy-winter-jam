@@ -11,7 +11,7 @@ func _ready() -> void:
 	for branch: Node3D in branches:
 		branch.hide();
 	
-	dam_trigger.call_deferred("enable_dam");
+	dam_trigger.call_deferred("disable_dam");
 	dam_trigger.branch_entered.connect(_on_branch_enter);
 
 func _on_branch_enter() -> void:
@@ -25,4 +25,4 @@ func _on_branch_enter() -> void:
 
 	
 func enable_dam() -> void:
-	dam_trigger.call_deferred("disable_dam");
+	dam_trigger.call_deferred("enable_dam");

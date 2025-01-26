@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://du1fkxk1ykcui"]
+
+[ext_resource type="Script" uid="uid://bjvxu8dbocmgf" path="res://scripts/interaction/dam_trigger.gd" id="1_qgerl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f1lt7"]
+size = Vector3(3.81812, 2.24457, 2.48804)
+
+[node name="DamTrigger" type="Area3D" node_paths=PackedStringArray("collision_shape")]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_qgerl")
+collision_shape = NodePath("CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165649, 0.622284, 0)
+shape = SubResource("BoxShape3D_f1lt7")
