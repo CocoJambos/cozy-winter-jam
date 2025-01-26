@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1ndh1lwibadr"]
+[gd_scene load_steps=7 format=3 uid="uid://b1ndh1lwibadr"]
 
 [ext_resource type="Script" uid="uid://dmbvlbhxyd73w" path="res://scripts/ui/loading_ui.gd" id="1_f5cxw"]
 [ext_resource type="Texture2D" uid="uid://b5m6hsaap6j2l" path="res://textures/UI/Logo.png" id="2_aac20"]
 [ext_resource type="Texture2D" uid="uid://dwumrmtssrkbk" path="res://textures/UI/details.png" id="3_aac20"]
+[ext_resource type="Script" uid="uid://8rk4q1eevqlv" path="res://scripts/ui/details_ui.gd" id="3_pfayw"]
 [ext_resource type="Texture2D" uid="uid://c6mwji3a1ihwj" path="res://textures/UI/End.png" id="4_g5kmx"]
+[ext_resource type="Script" path="res://scripts/ui/end_ui.gd" id="5_7vp6q"]
 
 [node name="UI" type="CanvasLayer"]
 
@@ -27,12 +29,14 @@ texture = ExtResource("2_aac20")
 expand_mode = 2
 
 [node name="DetailsUI" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_pfayw")
 
 [node name="TextureRect" type="TextureRect" parent="DetailsUI"]
 layout_mode = 1
@@ -45,12 +49,14 @@ texture = ExtResource("3_aac20")
 expand_mode = 2
 
 [node name="EndUI" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("5_7vp6q")
 
 [node name="TextureRect" type="TextureRect" parent="EndUI"]
 layout_mode = 1
