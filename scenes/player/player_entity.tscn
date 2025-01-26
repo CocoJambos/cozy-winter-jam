@@ -9,9 +9,10 @@ radius = 0.259084
 
 [node name="PlayerEntity" type="CharacterBody3D" node_paths=PackedStringArray("spring_arm", "camera")]
 script = ExtResource("1_10jv8")
-acceleration = 3.5
-max_speed = 3.5
-rotate_speed = 0.1
+max_speed = 3.0
+min_camera_degree = -30.0
+max_camera_degree = 30.0
+rotate_speed = 1.0
 spring_arm = NodePath("SpringArm3D")
 camera = NodePath("SpringArm3D/Camera3D")
 metadata/_custom_type_script = ExtResource("1_10jv8")
