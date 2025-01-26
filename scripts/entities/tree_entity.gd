@@ -6,6 +6,10 @@ class_name TreeEntity;
 @export var bark: Node3D;
 @export var bark_entity: BarkEntity;
 @export var chop_force_scalar: float;
+@export var audio_stream: AudioStreamPlayer3D;
+@export var audio_stream_branch: AudioStreamPlayer3D;
+
+@export var bites: Array[AudioStreamOggVorbis];
 
 var node: Node;
 var current_chop_time: float = 0;
@@ -24,9 +28,16 @@ func _on_tick(delta: float) -> void:
 	var bark_scale: float = 1 - normalized_time;
 	bark.scale = bark_scale * cached_bark_scale;
 	
+	if !audio_stream_branch.playing:
+		var rand: int = randi() % bites.size() - 1;
+		var sound: AudioStreamOggVorbis = bites[rand];
+		audio_stream_branch.stream = sound;
+		audio_stream_branch.play();
+	
 	if current_chop_time < chop_total_time_sec:
 		return;
 	
+	audio_stream.play();
 	var caller: Node3D = node as Node3D;
 	var impulse: Vector3 = (bark_entity.global_position - caller.global_position).normalized() * chop_force_scalar;
 	bark_entity.awake_bark(impulse);

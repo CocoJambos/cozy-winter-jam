@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://v6d2ovk5keer"]
+[gd_scene load_steps=11 format=3 uid="uid://v6d2ovk5keer"]
 
 [ext_resource type="PackedScene" uid="uid://bpgtw8sxv8xlt" path="res://scenes/game_modes/game_mode.tscn" id="1_073ak"]
 [ext_resource type="PackedScene" uid="uid://deeclwef3ifsb" path="res://scenes/game_maps/prototype_scene.tscn" id="2_e7dqg"]
@@ -9,12 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://dc7okl7c4ayxx" path="res://scenes/water/water_plane.tscn" id="7_jpdmf"]
 [ext_resource type="Script" uid="uid://dmbvlbhxyd73w" path="res://scripts/ui/loading_ui.gd" id="8_330ev"]
 [ext_resource type="Texture2D" uid="uid://b5m6hsaap6j2l" path="res://textures/UI/Logo.png" id="9_u11p3"]
+[ext_resource type="AudioStream" uid="uid://58unf566s634" path="res://static_files/audio/music_loop-001.ogg" id="10_u11p3"]
 
 [node name="MovementGameMode" type="Node3D"]
 
-[node name="GameMode" parent="." node_paths=PackedStringArray("game_map", "loading_ui") instance=ExtResource("1_073ak")]
+[node name="GameMode" parent="." node_paths=PackedStringArray("game_map", "loading_ui", "loop") instance=ExtResource("1_073ak")]
 game_map = NodePath("../Map")
 loading_ui = NodePath("../UI/LoadingUI")
+loop = NodePath("../Loop")
 
 [node name="SpawnPoint" parent="GameMode/PlayerSpawner" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 1)
@@ -72,6 +74,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_u11p3")
 expand_mode = 2
+
+[node name="Loop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_u11p3")
 
 [editable path="GameMode"]
 [editable path="GameMode/PlayerSpawner"]

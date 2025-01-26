@@ -5,6 +5,7 @@ class_name GameMode;
 @export var input_provider: InputProvider;
 @export var game_map: Node3D;
 @export var loading_ui: LoadingUI;
+@export var loop: AudioStreamPlayer;
 
 var player_entity: PlayerEntity;
 
@@ -23,6 +24,8 @@ func _start_game() -> void:
 	
 	await loading_ui._start_closing().close;
 	loading_ui.hide();
+	
+	loop.play();
 	
 	unpause_game();
 
