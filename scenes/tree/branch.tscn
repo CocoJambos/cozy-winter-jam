@@ -1,4 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://cwvpon7sqwaj"]
+[gd_scene load_steps=11 format=4 uid="uid://cwvpon7sqwaj"]
+
+[ext_resource type="Script" uid="uid://csdtxmbyybupr" path="res://scripts/entities/branch_entity.gd" id="1_sf4ov"]
+[ext_resource type="Script" uid="uid://bewbu7iclh738" path="res://scripts/interaction/interaction_receiver.gd" id="2_amkh7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1b4ex"]
 resource_name = "brown"
@@ -80,7 +83,12 @@ radius = 0.0629883
 height = 0.894516
 radius = 0.0791016
 
-[node name="branch" type="RigidBody3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_amkh7"]
+size = Vector3(2.23608, 0.386108, 0.326904)
+
+[node name="branch" type="RigidBody3D" node_paths=PackedStringArray("interaction_receiver")]
+script = ExtResource("1_sf4ov")
+interaction_receiver = NodePath("InteractionReceiver")
 
 [node name="branch_3_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.106903, -0.685657, 2.67651e-05, -0.0590043, 0.426327, -0.119022, 0.0815965, -0.590017, -0.0860321, 0, 0, 0)
@@ -98,3 +106,16 @@ shape = SubResource("CylinderShape3D_amkh7")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.628102, -0.769624, 0.114747, 0.769235, 0.636367, 0.057564, -0.117324, 0.0521111, 0.991725, -0.412493, 0.591452, 0.0655292)
 shape = SubResource("CylinderShape3D_sf4ov")
+
+[node name="GrabPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123865, -0.088976)
+
+[node name="InteractionReceiver" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_amkh7")
+metadata/_custom_type_script = ExtResource("2_amkh7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionReceiver"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.134155, 0.178894, -0.00402832)
+shape = SubResource("BoxShape3D_amkh7")

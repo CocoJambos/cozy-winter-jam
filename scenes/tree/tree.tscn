@@ -1,6 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://b74bj1cuni5k8"]
+[gd_scene load_steps=16 format=4 uid="uid://b74bj1cuni5k8"]
 
+[ext_resource type="Script" uid="uid://dcfrxla8m8w3r" path="res://scripts/entities/tree_entity.gd" id="1_2bbdv"]
 [ext_resource type="PackedScene" uid="uid://cwvpon7sqwaj" path="res://scenes/tree/branch.tscn" id="1_cuvwl"]
+[ext_resource type="Script" uid="uid://bsbj8443j0yrc" path="res://scripts/entities/bark_entity.gd" id="2_4ol1s"]
+[ext_resource type="Script" uid="uid://bewbu7iclh738" path="res://scripts/interaction/interaction_receiver.gd" id="2_mbf7r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nvcb"]
 resource_name = "brown"
@@ -165,7 +168,14 @@ shadow_mesh = SubResource("ArrayMesh_0fno7")
 height = 1.37274
 radius = 0.167969
 
-[node name="tree" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2bbdv"]
+
+[node name="tree" type="Node3D" node_paths=PackedStringArray("interaction_receiver", "bark", "bark_entity")]
+script = ExtResource("1_2bbdv")
+interaction_receiver = NodePath("InteractionReceiver")
+bark = NodePath("bark")
+bark_entity = NodePath("bark_main")
+chop_force_scalar = 3.0
 
 [node name="bark" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.146859, 0, 0, 0, 1, 0, 0, 0, 0.146859, 0, 0.50271, 0)
@@ -183,9 +193,12 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.256654, 0)
 shape = SubResource("BoxShape3D_pqjyy")
 
-[node name="bark_main" type="RigidBody3D" parent="."]
+[node name="bark_main" type="RigidBody3D" parent="." node_paths=PackedStringArray("impulse_position", "branches")]
 freeze = true
 freeze_mode = 1
+script = ExtResource("2_4ol1s")
+impulse_position = NodePath("ImpulsePosition")
+branches = [NodePath("branch"), NodePath("branch2"), NodePath("branch3"), NodePath("branch4")]
 
 [node name="trunk_top" type="MeshInstance3D" parent="bark_main"]
 transform = Transform3D(0.146859, 0, 0, 0, 1, 0, 0, 0, 0.146859, 0, 0, 0)
@@ -196,24 +209,34 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22642, 0)
 shape = SubResource("CylinderShape3D_pqjyy")
 
-[node name="branch" parent="." instance=ExtResource("1_cuvwl")]
+[node name="branch" parent="bark_main" instance=ExtResource("1_cuvwl")]
 transform = Transform3D(-0.746626, 0.665243, 0, -0.665243, -0.746626, 0, 0, 0, 1, 0.728167, 2.72625, 0.0518733)
 freeze = true
-freeze_mode = 1
 
-[node name="branch2" parent="." instance=ExtResource("1_cuvwl")]
+[node name="branch2" parent="bark_main" instance=ExtResource("1_cuvwl")]
 transform = Transform3D(0.181186, -0.629409, -0.755655, -0.592752, -0.683013, 0.426777, -0.78474, 0.370591, -0.496836, -0.179169, 2.69093, 0.763675)
 freeze = true
-freeze_mode = 1
 
-[node name="branch3" parent="." instance=ExtResource("1_cuvwl")]
+[node name="branch3" parent="bark_main" instance=ExtResource("1_cuvwl")]
 transform = Transform3D(0.48547, -0.708994, 0.511513, -0.441473, -0.703818, -0.556545, 0.7546, 0.0443664, -0.654685, -0.377859, 2.59836, -0.851969)
 freeze = true
-freeze_mode = 1
 
-[node name="branch4" parent="." instance=ExtResource("1_cuvwl")]
+[node name="branch4" parent="bark_main" instance=ExtResource("1_cuvwl")]
 transform = Transform3D(-0.0124175, 0.191168, -0.990689, -0.995832, -0.128601, 0, -0.0903569, 1.39105, 0.136148, -0.0452518, 3.09249, -0.075309)
 freeze = true
-freeze_mode = 1
 
-[editable path="branch4"]
+[node name="ImpulsePosition" type="Node3D" parent="bark_main"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88379, 0)
+
+[node name="InteractionReceiver" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_mbf7r")
+block_movement = true
+metadata/_custom_type_script = ExtResource("2_mbf7r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionReceiver"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.385986, 0)
+shape = SubResource("BoxShape3D_2bbdv")
+
+[editable path="bark_main/branch4"]
