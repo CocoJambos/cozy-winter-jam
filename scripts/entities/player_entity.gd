@@ -12,6 +12,8 @@ class_name PlayerEntity;
 @export var camera: Camera3D;
 @export var interaction_cast: ShapeCast3D;
 @export var grab_mouth: Node3D;
+@export var footstep_stream: AudioStreamPlayer3D;
+@export var footsteps: Array[AudioStreamOggVorbis];
 
 var interaction_receiver: InteractionReceiver;
 var input_data: InputData = null;
@@ -28,9 +30,24 @@ func _process(delta: float) -> void:
 	
 	camera_movement(delta);
 	body_movement(delta);
+	footsteps_play();
 	
 func _physics_process(delta: float) -> void:
 	blocked_movement = interaction(delta);
+	
+func footsteps_play() -> void:
+	if velocity.is_zero_approx():
+		if footstep_stream.playing:
+			footstep_stream.stop();
+		return;
+	
+	if footstep_stream.playing:
+		return;
+	
+	var rand: int = randi() % footsteps.size() - 1;
+	var audio: AudioStreamOggVorbis = footsteps[rand];
+	footstep_stream.stream = audio;
+	footstep_stream.play();
 
 func handle_input(input_data: InputData) -> void:
 	self.input_data = input_data;

@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfw2pfc0ug6dp"]
+[gd_scene load_steps=10 format=3 uid="uid://cfw2pfc0ug6dp"]
 
 [ext_resource type="Script" uid="uid://dwmjbge87robn" path="res://scripts/entities/player_entity.gd" id="1_10jv8"]
+[ext_resource type="AudioStream" uid="uid://c8ldmwt5gsvqo" path="res://static_files/audio/footstep-001.ogg" id="2_ij5l2"]
 [ext_resource type="Script" uid="uid://0ar61ie5u3kl" path="res://scripts/utils/process_disable.gd" id="3_i0wwn"]
+[ext_resource type="AudioStream" uid="uid://capo7jgqk5iej" path="res://static_files/audio/footstep-002.ogg" id="3_vj2p3"]
+[ext_resource type="AudioStream" uid="uid://c6cs2ryf4aj6d" path="res://static_files/audio/footstep-003.ogg" id="4_04pll"]
 [ext_resource type="Shape3D" uid="uid://d1ivqmnnrxx1d" path="res://resources/collision_shapes/interaction_shape_player.tres" id="4_p1jmo"]
+[ext_resource type="AudioStream" uid="uid://7ygtk60l1kth" path="res://static_files/audio/footstep-004.ogg" id="5_11b7w"]
 [ext_resource type="PackedScene" uid="uid://ckn1rou7x20hs" path="res://static_files/bober.glb" id="5_phw86"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_s1hou"]
 radius = 0.259084
 
-[node name="PlayerEntity" type="CharacterBody3D" node_paths=PackedStringArray("spring_arm", "camera", "interaction_cast", "grab_mouth")]
+[node name="PlayerEntity" type="CharacterBody3D" node_paths=PackedStringArray("spring_arm", "camera", "interaction_cast", "grab_mouth", "footstep_stream")]
 script = ExtResource("1_10jv8")
 max_speed = 3.0
 min_camera_degree = -30.0
@@ -18,6 +22,8 @@ spring_arm = NodePath("SpringArm3D")
 camera = NodePath("SpringArm3D/Camera3D")
 interaction_cast = NodePath("InteractionCast")
 grab_mouth = NodePath("GrabMouth")
+footstep_stream = NodePath("FootSteps")
+footsteps = Array[AudioStreamOggVorbis]([ExtResource("2_ij5l2"), ExtResource("3_vj2p3"), ExtResource("4_04pll"), ExtResource("5_11b7w")])
 metadata/_custom_type_script = ExtResource("1_10jv8")
 
 [node name="MovementCollision" type="CollisionShape3D" parent="."]
@@ -48,3 +54,7 @@ collide_with_areas = true
 
 [node name="GrabMouth" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0930898, 0.279281)
+
+[node name="FootSteps" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.305922, 0)
+bus = &"Effects"
