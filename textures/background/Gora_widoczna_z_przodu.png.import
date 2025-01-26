@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b01gtnpooovw0"
-path.s3tc="res://.godot/imported/Krajobraz_z_daleka.png-8b30c8aa9cf3afe2a30c981821387200.s3tc.ctex"
+uid="uid://ctefv1qyccmkm"
+path.s3tc="res://.godot/imported/Gora_widoczna_z_przodu.png-1bac4173e0858833cc51caaf35133ca5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/Krajobraz_z_daleka.png"
-dest_files=["res://.godot/imported/Krajobraz_z_daleka.png-8b30c8aa9cf3afe2a30c981821387200.s3tc.ctex"]
+source_file="res://textures/background/Gora_widoczna_z_przodu.png"
+dest_files=["res://.godot/imported/Gora_widoczna_z_przodu.png-1bac4173e0858833cc51caaf35133ca5.s3tc.ctex"]
 
 [params]
 

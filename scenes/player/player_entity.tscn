@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfw2pfc0ug6dp"]
 
 [ext_resource type="Script" uid="uid://dwmjbge87robn" path="res://scripts/entities/player_entity.gd" id="1_10jv8"]
-[ext_resource type="PackedScene" uid="uid://d35g4ei7c6rbg" path="res://scenes/player/rig_root.tscn" id="2_s1hou"]
 [ext_resource type="Script" uid="uid://0ar61ie5u3kl" path="res://scripts/utils/process_disable.gd" id="3_i0wwn"]
 [ext_resource type="Shape3D" uid="uid://d1ivqmnnrxx1d" path="res://resources/collision_shapes/interaction_shape_player.tres" id="4_p1jmo"]
+[ext_resource type="PackedScene" uid="uid://ckn1rou7x20hs" path="res://static_files/bober.glb" id="5_phw86"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_s1hou"]
 radius = 0.259084
@@ -23,7 +23,8 @@ metadata/_custom_type_script = ExtResource("1_10jv8")
 [node name="MovementCollision" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_s1hou")
 
-[node name="RigRoot" parent="." instance=ExtResource("2_s1hou")]
+[node name="bober" parent="." instance=ExtResource("5_phw86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.239129, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.157242, 0)
