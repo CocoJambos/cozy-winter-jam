@@ -6,6 +6,7 @@ class_name GameMode;
 @export var game_map: Node3D;
 @export var loading_ui: LoadingUI;
 @export var loop: AudioStreamPlayer;
+@export var ambient: AudioStreamPlayer;
 
 var player_entity: PlayerEntity;
 
@@ -26,6 +27,7 @@ func _start_game() -> void:
 	loading_ui.hide();
 	
 	loop.play();
+	ambient.play();
 	
 	unpause_game();
 
