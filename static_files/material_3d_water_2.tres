@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ds3w2534il3us"]
+
+[resource]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+no_depth_test = true
+albedo_color = Color(0, 0.521569, 1, 1)
+metallic_specular = 1.0
+emission_energy_multiplier = 9.4
+refraction_scale = -1.0

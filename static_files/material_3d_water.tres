@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://o23nyil1wny3"]
+
+[resource]
+blend_mode = 3
+cull_mode = 2
+depth_draw_mode = 1
+albedo_color = Color(0.714422, 0.850338, 0.999999, 1)
+metallic_specular = 1.0
+emission_energy_multiplier = 9.4
+refraction_scale = -1.0
