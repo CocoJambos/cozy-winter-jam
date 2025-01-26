@@ -351,136 +351,142 @@ visibility_aabb = AABB(-58.0821, -62.9646, -34.1281, 108.166, 65.8864, 66.6957)
 process_material = SubResource("ParticleProcessMaterial_m4txo")
 draw_pass_1 = SubResource("QuadMesh_eo2yl")
 
-[node name="Background" type="Sprite3D" parent="."]
+[node name="TreeBillboards" type="Node3D" parent="."]
+
+[node name="Tree" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 8.1276, -78.3445)
+texture = ExtResource("6_yb4mi")
+
+[node name="Tree2" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 21.5341, 20.015, -78.3445)
+texture = ExtResource("7_oi4se")
+
+[node name="Tree3" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25.4659, 10.485, -74.9415)
+texture = ExtResource("8_57ngk")
+
+[node name="Tree4" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -48.4659, 14.9932, -73.1133)
+texture = ExtResource("9_8kk6f")
+
+[node name="Tree5" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 58.634, 20.015, -70.227)
+texture = ExtResource("10_0avyg")
+
+[node name="Tree6" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 68.059, 8.1276, 6.41721)
+texture = ExtResource("6_yb4mi")
+
+[node name="Tree7" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 68.059, 20.015, -15.1169)
+texture = ExtResource("7_oi4se")
+
+[node name="Tree8" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(0, 0, 3, 0, 3, 0, -3, 0, 0, 71.4619, 10.485, 31.8831)
+texture = ExtResource("8_57ngk")
+
+[node name="Tree9" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 73.2901, 14.9932, 54.8831)
+texture = ExtResource("9_8kk6f")
+
+[node name="Tree10" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 76.1765, 20.015, -52.2168)
+texture = ExtResource("10_0avyg")
+
+[node name="Tree11" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(0, 0, 5, 0, 2.88964, 0, -3.53371, 0, 0, 24.6559, 3.49886, 4.69712)
+texture = ExtResource("6_yb4mi")
+
+[node name="Tree12" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(1.00484, 0, 0.997089, 0, 1.56495, 0, -1.07447, 0, 0.932472, -24.5766, 5.56906, -27.9291)
+texture = ExtResource("8_57ngk")
+
+[node name="Tree13" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(-1.04123, 0, 0.964395, 0, 2.11338, 0, -1.03924, 0, -0.966248, 19.1574, 7.5678, -25.3609)
+texture = ExtResource("8_57ngk")
+
+[node name="Tree14" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(0, 0, 5, 0, 2.88964, 0, -3.53371, 0, 0, 24.0244, 5.21701, -14.7894)
+texture = ExtResource("6_yb4mi")
+
+[node name="Tree15" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(0, 0, 5, 0, 2.09645, 0, -2.18976, 0, 0, 21.4499, 0.488823, 26.0686)
+texture = ExtResource("6_yb4mi")
+
+[node name="Tree16" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(1.22488, 0, 0.756089, 0, 2.11338, 0, -0.814767, 0, 1.13667, -27.8072, 7.5678, -25.3609)
+texture = ExtResource("8_57ngk")
+
+[node name="Tree17" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(0, 0, 5, 0, 2.88964, 0, -3.53371, 0, 0, -22.9402, 5.21701, -14.7894)
+texture = ExtResource("6_yb4mi")
+
+[node name="Tree18" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(0, 0, 5, 0, 2.09645, 0, -2.18976, 0, 0, -25.5148, 0.488823, 26.0686)
+texture = ExtResource("6_yb4mi")
+
+[node name="MountainBillboards" type="Node3D" parent="."]
+
+[node name="Mountain" type="Sprite3D" parent="MountainBillboards"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 44.229, -77.365)
+texture = ExtResource("5_eo2yl")
+
+[node name="Mountain2" type="Sprite3D" parent="MountainBillboards"]
+transform = Transform3D(1.31134e-06, 0, 10, 0, 10, 0, -10, 0, 1.31134e-06, 88, 44.229, 8.63499)
+texture = ExtResource("5_eo2yl")
+
+[node name="Mountain3" type="Sprite3D" parent="MountainBillboards"]
+transform = Transform3D(10, 0, -1.90735e-06, 0, 10, 0, 1.90735e-06, 0, 10, -3, 45.419, 72.635)
+texture = ExtResource("5_eo2yl")
+
+[node name="Mountain4" type="Sprite3D" parent="MountainBillboards"]
+transform = Transform3D(-2.34446e-06, 0, -10, 0, 10, 0, 10, 0, -2.34446e-06, -71, 45.419, -5.36501)
+texture = ExtResource("5_eo2yl")
+
+[node name="Mountain5" type="Sprite3D" parent="MountainBillboards"]
+transform = Transform3D(8.7789e-07, 0, -6.33795, 0, 2.41606, 0, -3.74453, 0, -1.48591e-06, -25.7739, 9.52724, 1.46573)
+texture = ExtResource("5_eo2yl")
+
+[node name="Mountain6" type="Sprite3D" parent="MountainBillboards"]
+transform = Transform3D(8.7789e-07, 0, -6.33795, 0, 2.41606, 0, -3.74453, 0, -1.48591e-06, 25.6223, 9.52724, 1.46573)
+texture = ExtResource("5_eo2yl")
+
+[node name="Mountain7" type="Sprite3D" parent="MountainBillboards"]
+transform = Transform3D(3.74453, 0, 1.76295e-06, 0, 2.41606, 0, 1.04157e-06, 0, -6.33795, 9.10739, 13.0492, -33.4743)
+texture = ExtResource("5_eo2yl")
+
+[node name="Mountain8" type="Sprite3D" parent="MountainBillboards"]
+transform = Transform3D(3.74453, 0, 1.76295e-06, 0, 2.41606, 0, 1.04157e-06, 0, -6.33795, -5.63643, 8.70797, 32.2071)
+texture = ExtResource("5_eo2yl")
+
+[node name="BackgroundBillboards" type="Node3D" parent="."]
+
+[node name="Background" type="Sprite3D" parent="BackgroundBillboards"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 46.9498, -101)
 cast_shadow = 0
 transparent = false
 double_sided = false
 texture = ExtResource("4_g03yt")
 
-[node name="Background2" type="Sprite3D" parent="."]
+[node name="Background2" type="Sprite3D" parent="BackgroundBillboards"]
 transform = Transform3D(0, 0, -10, 0, 10, 0, 10, 0, 0, 96, 46.9498, -7)
 cast_shadow = 0
 transparent = false
 double_sided = false
 texture = ExtResource("4_g03yt")
 
-[node name="Background3" type="Sprite3D" parent="."]
+[node name="Background3" type="Sprite3D" parent="BackgroundBillboards"]
 transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 4, 46.9498, 83)
 cast_shadow = 0
 transparent = false
 double_sided = false
 texture = ExtResource("4_g03yt")
 
-[node name="Background4" type="Sprite3D" parent="."]
+[node name="Background4" type="Sprite3D" parent="BackgroundBillboards"]
 transform = Transform3D(-8.74228e-07, 0, 10, 0, 10, 0, -10, 0, -8.74228e-07, -92, 46.9498, -11)
 cast_shadow = 0
 transparent = false
 double_sided = false
 texture = ExtResource("4_g03yt")
-
-[node name="Mountain" type="Sprite3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 44.229, -77.365)
-texture = ExtResource("5_eo2yl")
-
-[node name="Mountain2" type="Sprite3D" parent="."]
-transform = Transform3D(1.31134e-06, 0, 10, 0, 10, 0, -10, 0, 1.31134e-06, 88, 44.229, 8.63499)
-texture = ExtResource("5_eo2yl")
-
-[node name="Mountain3" type="Sprite3D" parent="."]
-transform = Transform3D(10, 0, -1.90735e-06, 0, 10, 0, 1.90735e-06, 0, 10, -3, 45.419, 72.635)
-texture = ExtResource("5_eo2yl")
-
-[node name="Mountain4" type="Sprite3D" parent="."]
-transform = Transform3D(-2.34446e-06, 0, -10, 0, 10, 0, 10, 0, -2.34446e-06, -71, 45.419, -5.36501)
-texture = ExtResource("5_eo2yl")
-
-[node name="Tree" type="Sprite3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 8.1276, -78.3445)
-texture = ExtResource("6_yb4mi")
-
-[node name="Tree2" type="Sprite3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 21.5341, 20.015, -78.3445)
-texture = ExtResource("7_oi4se")
-
-[node name="Tree3" type="Sprite3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25.4659, 10.485, -74.9415)
-texture = ExtResource("8_57ngk")
-
-[node name="Tree4" type="Sprite3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -48.4659, 14.9932, -73.1133)
-texture = ExtResource("9_8kk6f")
-
-[node name="Tree5" type="Sprite3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 58.634, 20.015, -70.227)
-texture = ExtResource("10_0avyg")
-
-[node name="Tree6" type="Sprite3D" parent="."]
-transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 68.059, 8.1276, 6.41721)
-texture = ExtResource("6_yb4mi")
-
-[node name="Tree7" type="Sprite3D" parent="."]
-transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 68.059, 20.015, -15.1169)
-texture = ExtResource("7_oi4se")
-
-[node name="Tree8" type="Sprite3D" parent="."]
-transform = Transform3D(0, 0, 3, 0, 3, 0, -3, 0, 0, 71.4619, 10.485, 31.8831)
-texture = ExtResource("8_57ngk")
-
-[node name="Tree9" type="Sprite3D" parent="."]
-transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 73.2901, 14.9932, 54.8831)
-texture = ExtResource("9_8kk6f")
-
-[node name="Tree10" type="Sprite3D" parent="."]
-transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 76.1765, 20.015, -52.2168)
-texture = ExtResource("10_0avyg")
-
-[node name="Tree11" type="Sprite3D" parent="."]
-transform = Transform3D(0, 0, 5, 0, 2.88964, 0, -3.53371, 0, 0, 24.6559, 3.49886, 4.69712)
-texture = ExtResource("6_yb4mi")
-
-[node name="Mountain5" type="Sprite3D" parent="."]
-transform = Transform3D(8.7789e-07, 0, -6.33795, 0, 2.41606, 0, -3.74453, 0, -1.48591e-06, -25.7739, 9.52724, 1.46573)
-texture = ExtResource("5_eo2yl")
-
-[node name="Mountain6" type="Sprite3D" parent="."]
-transform = Transform3D(8.7789e-07, 0, -6.33795, 0, 2.41606, 0, -3.74453, 0, -1.48591e-06, 25.6223, 9.52724, 1.46573)
-texture = ExtResource("5_eo2yl")
-
-[node name="Mountain7" type="Sprite3D" parent="."]
-transform = Transform3D(3.74453, 0, 1.76295e-06, 0, 2.41606, 0, 1.04157e-06, 0, -6.33795, 9.10739, 13.0492, -33.4743)
-texture = ExtResource("5_eo2yl")
-
-[node name="Mountain8" type="Sprite3D" parent="."]
-transform = Transform3D(3.74453, 0, 1.76295e-06, 0, 2.41606, 0, 1.04157e-06, 0, -6.33795, -5.63643, 8.70797, 32.2071)
-texture = ExtResource("5_eo2yl")
-
-[node name="Tree12" type="Sprite3D" parent="."]
-transform = Transform3D(1.00484, 0, 0.997089, 0, 1.56495, 0, -1.07447, 0, 0.932472, -24.5766, 5.56906, -27.9291)
-texture = ExtResource("8_57ngk")
-
-[node name="Tree13" type="Sprite3D" parent="."]
-transform = Transform3D(-1.04123, 0, 0.964395, 0, 2.11338, 0, -1.03924, 0, -0.966248, 19.1574, 7.5678, -25.3609)
-texture = ExtResource("8_57ngk")
-
-[node name="Tree14" type="Sprite3D" parent="."]
-transform = Transform3D(0, 0, 5, 0, 2.88964, 0, -3.53371, 0, 0, 24.0244, 5.21701, -14.7894)
-texture = ExtResource("6_yb4mi")
-
-[node name="Tree15" type="Sprite3D" parent="."]
-transform = Transform3D(0, 0, 5, 0, 2.09645, 0, -2.18976, 0, 0, 21.4499, 0.488823, 26.0686)
-texture = ExtResource("6_yb4mi")
-
-[node name="Tree16" type="Sprite3D" parent="."]
-transform = Transform3D(1.22488, 0, 0.756089, 0, 2.11338, 0, -0.814767, 0, 1.13667, -27.8072, 7.5678, -25.3609)
-texture = ExtResource("8_57ngk")
-
-[node name="Tree17" type="Sprite3D" parent="."]
-transform = Transform3D(0, 0, 5, 0, 2.88964, 0, -3.53371, 0, 0, -22.9402, 5.21701, -14.7894)
-texture = ExtResource("6_yb4mi")
-
-[node name="Tree18" type="Sprite3D" parent="."]
-transform = Transform3D(0, 0, 5, 0, 2.09645, 0, -2.18976, 0, 0, -25.5148, 0.488823, 26.0686)
-texture = ExtResource("6_yb4mi")
 
 [editable path="ground2"]
