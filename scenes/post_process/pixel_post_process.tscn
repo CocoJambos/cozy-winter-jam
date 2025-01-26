@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://db8eu3e5w5qvv"]
+
+[ext_resource type="Script" uid="uid://60cfbevjbn4j" path="res://scripts/post_process/pixel_post_process.gd" id="1_xf1m5"]
+[ext_resource type="Material" uid="uid://b15entms8wtyx" path="res://resources/materials/pixel_material.tres" id="2_iihec"]
+
+[node name="PixelPostProcess" type="CanvasLayer"]
+script = ExtResource("1_xf1m5")
+shader_material = ExtResource("2_iihec")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource("2_iihec")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

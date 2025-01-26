@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b15entms8wtyx"]
+
+[ext_resource type="Shader" uid="uid://cw1kfeo1rfhp" path="res://resources/shaders/pixelate.gdshader" id="1_42qqd"]
+
+[resource]
+shader = ExtResource("1_42qqd")
+shader_parameter/pixel_size = 12
+shader_parameter/screen_size = Vector2(1920, 1080)

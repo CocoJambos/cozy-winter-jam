@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 GameData="*res://scripts/autoloads/game_data.gd"
 
+[display]
+
+window/size/viewport_width=1151
+window/size/mode=3
+
 [input]
 
 up={
