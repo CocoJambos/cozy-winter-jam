@@ -346,7 +346,7 @@ transform = Transform3D(12.4504, 0, 0, 0, 12.4504, 0, 0, 0, 12.4504, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MapCollision"]
 shape = SubResource("ConcavePolygonShape3D_wger2")
 
-[node name="Snow" type="GPUParticles3D" parent="."]
+[node name="SnowParticles" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.02797, 0, 7.76038, 0)
 amount = 256
 lifetime = 3.5
@@ -374,6 +374,34 @@ texture = ExtResource("9_8kk6f")
 
 [node name="Tree5" type="Sprite3D" parent="TreeBillboards"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 58.634, 20.015, -70.227)
+texture = ExtResource("10_0avyg")
+
+[node name="Tree21" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 7.35663, 59.0365)
+texture = ExtResource("6_yb4mi")
+
+[node name="Tree22" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 21.5341, 19.244, 59.0365)
+texture = ExtResource("7_oi4se")
+
+[node name="Tree23" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25.4659, 9.71403, 62.4395)
+texture = ExtResource("8_57ngk")
+
+[node name="Tree24" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -48.4659, 14.2222, 64.2677)
+texture = ExtResource("9_8kk6f")
+
+[node name="Tree25" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 49.0981, 28.7682, 65.6847)
+texture = ExtResource("10_0avyg")
+
+[node name="Tree26" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(1.12756, 0, -1.953, 0, 2.25513, 0, 1.953, 0, 1.12756, 29.6258, 6.90251, -7.31538)
+texture = ExtResource("10_0avyg")
+
+[node name="Tree27" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(-5.96046e-08, 0, -2.25513, 0, 2.25513, 0, 2.25513, 0, -5.96046e-08, -34.5095, 6.90251, -7.31538)
 texture = ExtResource("10_0avyg")
 
 [node name="Tree6" type="Sprite3D" parent="TreeBillboards"]
@@ -404,12 +432,20 @@ texture = ExtResource("6_yb4mi")
 transform = Transform3D(1.00484, 0, 0.997089, 0, 1.56495, 0, -1.07447, 0, 0.932472, -24.5766, 5.56906, -27.9291)
 texture = ExtResource("8_57ngk")
 
+[node name="Tree20" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(-0.0492359, 0, 1.36441, 0, 1.56495, 0, -1.47029, 0, -0.0456911, -39.4136, 7.68653, 12.0709)
+texture = ExtResource("8_57ngk")
+
 [node name="Tree13" type="Sprite3D" parent="TreeBillboards"]
 transform = Transform3D(-1.04123, 0, 0.964395, 0, 2.11338, 0, -1.03924, 0, -0.966248, 19.1574, 7.5678, -25.3609)
 texture = ExtResource("8_57ngk")
 
 [node name="Tree14" type="Sprite3D" parent="TreeBillboards"]
 transform = Transform3D(0, 0, 5, 0, 2.88964, 0, -3.53371, 0, 0, 24.0244, 5.21701, -14.7894)
+texture = ExtResource("6_yb4mi")
+
+[node name="Tree19" type="Sprite3D" parent="TreeBillboards"]
+transform = Transform3D(0, 0, 5, 0, 2.88964, 0, -3.53371, 0, 0, -26.3882, 5.6769, 1.2106)
 texture = ExtResource("6_yb4mi")
 
 [node name="Tree15" type="Sprite3D" parent="TreeBillboards"]
@@ -508,7 +544,69 @@ transparent = false
 double_sided = false
 texture = ExtResource("4_g03yt")
 
-[node name="tree" parent="." instance=ExtResource("14_0avyg")]
+[node name="ChoppableTrees" type="Node3D" parent="."]
+
+[node name="tree" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.42886, -0.537857, -1.67035)
+
+[node name="tree2" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2132, -2.32409, 12.8662)
+
+[node name="tree3" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.69446, -1.86982, 16.5724)
+
+[node name="tree4" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.98736, -1.5919, 20.7112)
+
+[node name="tree5" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.91054, -1.72936, 19.4199)
+
+[node name="tree6" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.23886, -1.9329, 8.60108)
+
+[node name="tree7" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.52715, -2.25202, 20.1771)
+
+[node name="tree8" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.827, -1.87651, 12.9884)
+
+[node name="tree9" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2091, -2.42613, 13.2415)
+
+[node name="tree10" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.083, -1.73245, 18.0908)
+
+[node name="tree11" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.22729, -0.537855, 1.95516)
+
+[node name="tree12" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.36946, -0.228686, -1.32474)
+
+[node name="tree13" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9188, 0.26202, 3.05517)
+
+[node name="tree14" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1397, -0.0579206, 2.75764)
+
+[node name="tree15" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9826, -0.202034, -2.75653)
+
+[node name="tree16" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.74661, 1.2367, -10.109)
+
+[node name="tree17" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.31312, 1.9853, -17.682)
+
+[node name="tree18" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.92783, 1.64018, -12.18)
+
+[node name="tree19" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7357, 1.91088, -15.1424)
+
+[node name="tree20" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75019, 1.82295, -20.1345)
+
+[node name="tree21" parent="ChoppableTrees" instance=ExtResource("14_0avyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3176, 1.83421, -13.1383)
 
 [editable path="ground2"]
