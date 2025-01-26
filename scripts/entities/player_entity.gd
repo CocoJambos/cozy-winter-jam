@@ -11,7 +11,7 @@ class_name PlayerEntity;
 @export var spring_arm: SpringArm3D;
 @export var camera: Camera3D;
 @export var interaction_cast: ShapeCast3D;
-@export var grab_mouth: PinJoint3D;
+@export var grab_mouth: Node3D;
 
 var interaction_receiver: InteractionReceiver;
 var input_data: InputData = null;
