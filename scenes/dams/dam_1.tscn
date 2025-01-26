@@ -479,7 +479,7 @@ data = PackedVector3Array(-0.8944, -0.4472, 0, -0.5878, 0, 0.809, -0.6882, -0.52
 [node name="Dam_1" type="Node3D" node_paths=PackedStringArray("branches", "dam_trigger")]
 script = ExtResource("1_h8dpx")
 branches = [NodePath("dam_1_branch_1"), NodePath("dam_1_branch_2"), NodePath("dam_1_branch_3"), NodePath("dam_1_branch_4"), NodePath("dam_1_branch_5")]
-dam_trigger = NodePath("")
+dam_trigger = NodePath("DamTrigger")
 
 [node name="dam_1_branch_1" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0663523, 0.589164, 0.0983799, -0.112276, 0.642697, -0.00728744, -0.067522, -0.48972, 0.108793, -0.307082, 0.169151, 0.214649)

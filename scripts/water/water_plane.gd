@@ -3,6 +3,7 @@ class_name WaterPlane;
 
 @export var water_plane: Node3D;
 @export var starting_height: Marker3D;
+@export var target_dam: DamEntity;
 
 var starting_water_hight: float;
 var current_tween: Tween;
@@ -10,6 +11,7 @@ var current_tween: Tween;
 func _ready() -> void:
 	starting_water_hight = water_plane.global_position.y;
 	water_plane.global_position.y = starting_height.global_position.y;
+	target_dam.dam_progress.connect(_on_dam_progress);
 
 func _on_dam_progress(current: int, total: int) -> void:
 	if current_tween != null && current_tween.is_running():

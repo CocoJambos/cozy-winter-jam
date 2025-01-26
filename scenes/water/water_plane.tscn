@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc7okl7c4ayxx"]
+
+[ext_resource type="Script" uid="uid://dxfyo1k1o03fg" path="res://scripts/water/water_plane.gd" id="1_rporh"]
+
+[node name="WaterPlane" type="Node" node_paths=PackedStringArray("starting_height")]
+script = ExtResource("1_rporh")
+starting_height = NodePath("Marker3D")
+metadata/_custom_type_script = ExtResource("1_rporh")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.33425, 0)

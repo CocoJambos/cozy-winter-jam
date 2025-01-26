@@ -3,7 +3,8 @@ class_name DamEntity;
 signal dam_progress(current: int, total: int);
 
 @export var branches: Array[Node3D];
-@export var dam_trigger: DamTrigger;
+@export var dam_trigger: DamTrigger = null;
+@export var enable_on_start: bool;
 
 var current_progress: int = 0;
 
@@ -11,7 +12,9 @@ func _ready() -> void:
 	for branch: Node3D in branches:
 		branch.hide();
 	
-	dam_trigger.call_deferred("disable_dam");
+	if !enable_on_start:
+		dam_trigger.call_deferred("disable_dam");
+		
 	dam_trigger.branch_entered.connect(_on_branch_enter);
 
 func _on_branch_enter() -> void:
