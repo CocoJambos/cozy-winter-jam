@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfw2pfc0ug6dp"]
+[gd_scene load_steps=6 format=3 uid="uid://cfw2pfc0ug6dp"]
 
 [ext_resource type="Script" uid="uid://dwmjbge87robn" path="res://scripts/entities/player_entity.gd" id="1_10jv8"]
 [ext_resource type="PackedScene" uid="uid://d35g4ei7c6rbg" path="res://scenes/player/rig_root.tscn" id="2_s1hou"]
 [ext_resource type="Script" uid="uid://0ar61ie5u3kl" path="res://scripts/utils/process_disable.gd" id="3_i0wwn"]
+[ext_resource type="Shape3D" uid="uid://d1ivqmnnrxx1d" path="res://resources/collision_shapes/interaction_shape_player.tres" id="4_p1jmo"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_s1hou"]
 radius = 0.259084
 
-[node name="PlayerEntity" type="CharacterBody3D" node_paths=PackedStringArray("spring_arm", "camera")]
+[node name="PlayerEntity" type="CharacterBody3D" node_paths=PackedStringArray("spring_arm", "camera", "interaction_cast", "grab_mouth")]
 script = ExtResource("1_10jv8")
 max_speed = 3.0
 min_camera_degree = -30.0
@@ -15,6 +16,8 @@ max_camera_degree = 30.0
 rotate_speed = 1.0
 spring_arm = NodePath("SpringArm3D")
 camera = NodePath("SpringArm3D/Camera3D")
+interaction_cast = NodePath("InteractionCast")
+grab_mouth = NodePath("GrabMouth")
 metadata/_custom_type_script = ExtResource("1_10jv8")
 
 [node name="MovementCollision" type="CollisionShape3D" parent="."]
@@ -34,3 +37,13 @@ current = true
 script = ExtResource("3_i0wwn")
 nodes_to_disable = [NodePath("..")]
 metadata/_custom_type_script = ExtResource("3_i0wwn")
+
+[node name="InteractionCast" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.330576)
+shape = ExtResource("4_p1jmo")
+target_position = Vector3(0, 0, 0)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="GrabMouth" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0930898, 0.279281)

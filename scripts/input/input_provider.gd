@@ -9,8 +9,11 @@ func _input(event: InputEvent) -> void:
 		var movement_vector = Input.get_vector("left", "right", "up", "down");
 		input_data.movement_input = movement_vector;
 	
-	if event.is_action("action"):
-		input_data.action_input = event.is_action_pressed("action");
+	if event.is_action_pressed("action"):
+		input_data.action_input = true;
+	
+	if event.is_action_released("action"):
+		input_data.action_input = false;
 	
 	if event.is_action("pause"):
 		input_data.pause_input = event.is_action_pressed("pause");

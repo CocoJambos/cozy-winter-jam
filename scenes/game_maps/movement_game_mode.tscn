@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://v6d2ovk5keer"]
+[gd_scene load_steps=4 format=3 uid="uid://v6d2ovk5keer"]
 
 [ext_resource type="PackedScene" uid="uid://bpgtw8sxv8xlt" path="res://scenes/game_modes/game_mode.tscn" id="1_073ak"]
 [ext_resource type="PackedScene" uid="uid://deeclwef3ifsb" path="res://scenes/game_maps/prototype_scene.tscn" id="2_e7dqg"]
+[ext_resource type="PackedScene" uid="uid://b74bj1cuni5k8" path="res://scenes/tree/tree.tscn" id="3_e7dqg"]
 
 [node name="MovementGameMode" type="Node3D"]
 
@@ -14,5 +15,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 1)
 [node name="Map" parent="." instance=ExtResource("2_e7dqg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54232, 0, 0)
 
+[node name="tree" parent="." instance=ExtResource("3_e7dqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.84619, -0.566032, -1.0765)
+
+[node name="bark" parent="tree" index="0"]
+transform = Transform3D(0.146859, 0, 0, 0, 1, 0, 0, 0, 0.146859, 0, 0.50271, 0)
+
+[node name="trunk_botton" parent="tree" index="1"]
+transform = Transform3D(0.146859, 0, 0, 0, 1, 0, 0, 0, 0.146859, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="tree/trunk_botton/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.256654, 0)
+
+[node name="trunk_top" parent="tree/bark_main" index="0"]
+transform = Transform3D(0.146859, 0, 0, 0, 1, 0, 0, 0, 0.146859, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="tree/bark_main" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22642, 0)
+
 [editable path="GameMode"]
 [editable path="GameMode/PlayerSpawner"]
+[editable path="tree"]
+[editable path="tree/bark_main/branch4"]
