@@ -1,6 +1,7 @@
-[gd_scene load_steps=42 format=4 uid="uid://bylpfbe7lh3kd"]
+[gd_scene load_steps=43 format=4 uid="uid://bylpfbe7lh3kd"]
 
 [ext_resource type="Script" uid="uid://cj705b5iysa6h" path="res://scripts/entities/dam_entity.gd" id="1_4uoi5"]
+[ext_resource type="PackedScene" uid="uid://cmgwfpcdy3uum" path="res://scenes/dams/dam_player.tscn" id="2_lpmqu"]
 [ext_resource type="PackedScene" uid="uid://du1fkxk1ykcui" path="res://scenes/dams/dam_trigger.tscn" id="2_ufhkh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xifar"]
@@ -657,6 +658,7 @@ data = PackedVector3Array(-0.8944, -0.4472, 0, -0.5878, 0, 0.809, -0.6882, -0.52
 script = ExtResource("1_4uoi5")
 branches = [NodePath("dam_2_branch_1"), NodePath("dam_2_branch_2"), NodePath("dam_2_branch_3"), NodePath("dam_2_branch_4"), NodePath("dam_2_branch_5"), NodePath("dam_2_branch_6"), NodePath("dam_2_branch_7"), NodePath("dam_2_branch_8")]
 dam_trigger = NodePath("DamTrigger")
+dam_player_scene = ExtResource("2_lpmqu")
 
 [node name="dam_2_branch_1" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0950314, 0.758396, 0.0114778, -0.0590043, 0.426327, -0.119022, -0.0951588, 0.493032, 0.0852631, -0.603209, -0.167291, 0.131828)

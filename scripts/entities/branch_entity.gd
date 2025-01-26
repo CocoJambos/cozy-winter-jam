@@ -3,6 +3,8 @@ class_name BranchEntity;
 
 @export var interaction_receiver: InteractionReceiver;
 @export var pivot: Node3D;
+@export var grab_player: AudioStreamPlayer3D;
+
 var node: Node;
 
 func _ready() -> void:
@@ -35,6 +37,8 @@ func _on_start(_node: Node) -> void:
 		freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC;
 		
 		add_collision_exception_with(_node);
+		
+		grab_player.play();
 		
 		node = _node;
 		set_process(true);

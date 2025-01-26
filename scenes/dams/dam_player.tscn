@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmgwfpcdy3uum"]
+
+[ext_resource type="AudioStream" uid="uid://dtc0mmtrd8iwg" path="res://static_files/audio/stick_to_dam-001.ogg" id="1_6vxk7"]
+
+[node name="DamPlayer" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_6vxk7")
+bus = &"Effects"
