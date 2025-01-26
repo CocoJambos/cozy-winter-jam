@@ -45,6 +45,5 @@ target_position = Vector3(0, 0, 0)
 collision_mask = 2
 collide_with_areas = true
 
-[node name="GrabMouth" type="PinJoint3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0930898, 0.0882531)
-node_a = NodePath("..")
+[node name="GrabMouth" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0930898, 0.279281)

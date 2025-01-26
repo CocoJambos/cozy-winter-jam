@@ -86,9 +86,10 @@ radius = 0.0791016
 [sub_resource type="BoxShape3D" id="BoxShape3D_amkh7"]
 size = Vector3(2.23608, 0.386108, 0.326904)
 
-[node name="branch" type="RigidBody3D" node_paths=PackedStringArray("interaction_receiver")]
+[node name="branch" type="RigidBody3D" node_paths=PackedStringArray("interaction_receiver", "pivot")]
 script = ExtResource("1_sf4ov")
 interaction_receiver = NodePath("InteractionReceiver")
+pivot = NodePath("GrabPivot")
 
 [node name="branch_3_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.106903, -0.685657, 2.67651e-05, -0.0590043, 0.426327, -0.119022, 0.0815965, -0.590017, -0.0860321, 0, 0, 0)
