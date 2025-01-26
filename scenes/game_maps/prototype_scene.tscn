@@ -84,6 +84,7 @@ material = SubResource("StandardMaterial3D_g03yt")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.5, -0.75, 0.433013, 0, 0.5, 0.866025, -0.866025, 0.433013, -0.25, 0, 0, 0)
+light_color = Color(0.839484, 0.835803, 0.763424, 1)
 light_energy = 0.3
 shadow_enabled = true
 
@@ -397,5 +398,53 @@ texture = ExtResource("9_8kk6f")
 [node name="Tree10" type="Sprite3D" parent="."]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 76.1765, 20.015, -52.2168)
 texture = ExtResource("10_0avyg")
+
+[node name="Tree11" type="Sprite3D" parent="."]
+transform = Transform3D(0, 0, 5, 0, 2.88964, 0, -3.53371, 0, 0, 24.6559, 3.49886, 4.69712)
+texture = ExtResource("6_yb4mi")
+
+[node name="Mountain5" type="Sprite3D" parent="."]
+transform = Transform3D(8.7789e-07, 0, -6.33795, 0, 2.41606, 0, -3.74453, 0, -1.48591e-06, -25.7739, 9.52724, 1.46573)
+texture = ExtResource("5_eo2yl")
+
+[node name="Mountain6" type="Sprite3D" parent="."]
+transform = Transform3D(8.7789e-07, 0, -6.33795, 0, 2.41606, 0, -3.74453, 0, -1.48591e-06, 25.6223, 9.52724, 1.46573)
+texture = ExtResource("5_eo2yl")
+
+[node name="Mountain7" type="Sprite3D" parent="."]
+transform = Transform3D(3.74453, 0, 1.76295e-06, 0, 2.41606, 0, 1.04157e-06, 0, -6.33795, 9.10739, 13.0492, -33.4743)
+texture = ExtResource("5_eo2yl")
+
+[node name="Mountain8" type="Sprite3D" parent="."]
+transform = Transform3D(3.74453, 0, 1.76295e-06, 0, 2.41606, 0, 1.04157e-06, 0, -6.33795, -5.63643, 8.70797, 32.2071)
+texture = ExtResource("5_eo2yl")
+
+[node name="Tree12" type="Sprite3D" parent="."]
+transform = Transform3D(1.00484, 0, 0.997089, 0, 1.56495, 0, -1.07447, 0, 0.932472, -24.5766, 5.56906, -27.9291)
+texture = ExtResource("8_57ngk")
+
+[node name="Tree13" type="Sprite3D" parent="."]
+transform = Transform3D(-1.04123, 0, 0.964395, 0, 2.11338, 0, -1.03924, 0, -0.966248, 19.1574, 7.5678, -25.3609)
+texture = ExtResource("8_57ngk")
+
+[node name="Tree14" type="Sprite3D" parent="."]
+transform = Transform3D(0, 0, 5, 0, 2.88964, 0, -3.53371, 0, 0, 24.0244, 5.21701, -14.7894)
+texture = ExtResource("6_yb4mi")
+
+[node name="Tree15" type="Sprite3D" parent="."]
+transform = Transform3D(0, 0, 5, 0, 2.09645, 0, -2.18976, 0, 0, 21.4499, 0.488823, 26.0686)
+texture = ExtResource("6_yb4mi")
+
+[node name="Tree16" type="Sprite3D" parent="."]
+transform = Transform3D(1.22488, 0, 0.756089, 0, 2.11338, 0, -0.814767, 0, 1.13667, -27.8072, 7.5678, -25.3609)
+texture = ExtResource("8_57ngk")
+
+[node name="Tree17" type="Sprite3D" parent="."]
+transform = Transform3D(0, 0, 5, 0, 2.88964, 0, -3.53371, 0, 0, -22.9402, 5.21701, -14.7894)
+texture = ExtResource("6_yb4mi")
+
+[node name="Tree18" type="Sprite3D" parent="."]
+transform = Transform3D(0, 0, 5, 0, 2.09645, 0, -2.18976, 0, 0, -25.5148, 0.488823, 26.0686)
+texture = ExtResource("6_yb4mi")
 
 [editable path="ground"]
