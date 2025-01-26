@@ -8,6 +8,7 @@ signal dam_progress(current: int, total: int);
 @export var dam_player_scene: PackedScene;
 
 var dam_player: AudioStreamPlayer3D;
+var is_finished: bool = false;
 
 var current_progress: int = 0;
 
@@ -30,6 +31,7 @@ func _on_branch_enter() -> void:
 	dam_player.play();
 	
 	if current_progress >= branches.size():
+		is_finished = true;
 		dam_trigger.call_deferred("disable_dam");
 
 	
