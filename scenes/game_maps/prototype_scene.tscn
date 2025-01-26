@@ -450,6 +450,10 @@ texture = ExtResource("5_eo2yl")
 transform = Transform3D(8.7789e-07, 0, -6.33795, 0, 2.41606, 0, -3.74453, 0, -1.48591e-06, -25.7739, 9.52724, 1.46573)
 texture = ExtResource("5_eo2yl")
 
+[node name="Mountain12" type="Sprite3D" parent="MountainBillboards"]
+transform = Transform3D(-1.20525e-06, 0, 6.33795, 0, 2.41606, 0, 3.74453, 0, 2.03999e-06, -17.8926, 9.52724, -12.5343)
+texture = ExtResource("5_eo2yl")
+
 [node name="Mountain6" type="Sprite3D" parent="MountainBillboards"]
 transform = Transform3D(-7.7486e-07, 0, 6.33795, 0, 2.41606, 0, 3.74453, 0, 2.14577e-06, 25.6223, 9.52724, 1.46573)
 texture = ExtResource("5_eo2yl")
