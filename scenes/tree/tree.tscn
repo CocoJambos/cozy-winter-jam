@@ -1,9 +1,14 @@
-[gd_scene load_steps=16 format=4 uid="uid://b74bj1cuni5k8"]
+[gd_scene load_steps=21 format=4 uid="uid://b74bj1cuni5k8"]
 
 [ext_resource type="Script" uid="uid://dcfrxla8m8w3r" path="res://scripts/entities/tree_entity.gd" id="1_2bbdv"]
 [ext_resource type="PackedScene" uid="uid://cwvpon7sqwaj" path="res://scenes/tree/branch.tscn" id="1_cuvwl"]
 [ext_resource type="Script" uid="uid://bsbj8443j0yrc" path="res://scripts/entities/bark_entity.gd" id="2_4ol1s"]
+[ext_resource type="AudioStream" uid="uid://cbnu1k31m2323" path="res://static_files/audio/bite-001.ogg" id="2_gp22j"]
 [ext_resource type="Script" uid="uid://bewbu7iclh738" path="res://scripts/interaction/interaction_receiver.gd" id="2_mbf7r"]
+[ext_resource type="AudioStream" uid="uid://ddg6x74rvmu0q" path="res://static_files/audio/bite-002.ogg" id="3_cqdo8"]
+[ext_resource type="AudioStream" uid="uid://cm2whrm467tkc" path="res://static_files/audio/bite-003.ogg" id="4_bm6y3"]
+[ext_resource type="AudioStream" uid="uid://byariw773yxqd" path="res://static_files/audio/bite-004.ogg" id="5_hs8qy"]
+[ext_resource type="AudioStream" uid="uid://cde0d872o5hin" path="res://static_files/audio/tree_fall-001.ogg" id="5_ttu04"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nvcb"]
 resource_name = "brown"
@@ -170,12 +175,15 @@ radius = 0.167969
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2bbdv"]
 
-[node name="tree" type="Node3D" node_paths=PackedStringArray("interaction_receiver", "bark", "bark_entity")]
+[node name="tree" type="Node3D" node_paths=PackedStringArray("interaction_receiver", "bark", "bark_entity", "audio_stream", "audio_stream_branch")]
 script = ExtResource("1_2bbdv")
 interaction_receiver = NodePath("InteractionReceiver")
 bark = NodePath("bark")
 bark_entity = NodePath("bark_main")
 chop_force_scalar = 3.0
+audio_stream = NodePath("AudioTreeFall")
+audio_stream_branch = NodePath("AudioTreeBranch")
+bites = Array[AudioStreamOggVorbis]([ExtResource("2_gp22j"), ExtResource("3_cqdo8"), ExtResource("4_bm6y3"), ExtResource("5_hs8qy")])
 
 [node name="bark" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.146859, 0, 0, 0, 1, 0, 0, 0, 0.146859, 0, 0.50271, 0)
@@ -238,5 +246,13 @@ metadata/_custom_type_script = ExtResource("2_mbf7r")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionReceiver"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.385986, 0)
 shape = SubResource("BoxShape3D_2bbdv")
+
+[node name="AudioTreeFall" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_ttu04")
+bus = &"Effects"
+
+[node name="AudioTreeBranch" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_ttu04")
+bus = &"Effects"
 
 [editable path="bark_main/branch4"]
