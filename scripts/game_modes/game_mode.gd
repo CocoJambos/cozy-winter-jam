@@ -53,10 +53,12 @@ func _start_game() -> void:
 	end_ui.show();
 
 func pause_game() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE;
 	for to_disable: ProcessDisable in GameData.node_disablers.values():
 		to_disable.disable();
 
 func unpause_game() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
 	for to_disable: ProcessDisable in GameData.node_disablers.values():
 		to_disable.enable();
 	
