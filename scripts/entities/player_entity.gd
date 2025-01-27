@@ -76,7 +76,7 @@ func camera_movement(delta: float) -> void:
 	if input_data.mouse_input.is_zero_approx() || !input_data.mouse_input_triggered:
 		return;
 	
-	rotate_y(rotate_speed * input_data.mouse_input.x * delta);
+	rotate_y(rotate_speed * -input_data.mouse_input.x * delta);
 	spring_arm.rotate_x(rotate_speed * input_data.mouse_input.y * delta);
 	var x_rotation = spring_arm.rotation_degrees.x;
 	spring_arm.rotation_degrees.x = clampf(x_rotation, min_camera_degree, max_camera_degree);
